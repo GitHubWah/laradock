@@ -24,6 +24,8 @@ RUN apk update \
 # Set Timezone
 #####################################
 
+ARG TZ=UTC
+ENV TZ ${TZ}
 RUN apk add tzdata \
     && ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
