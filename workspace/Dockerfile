@@ -97,6 +97,21 @@ RUN if [ ${INSTALL_XDEBUG} = true ]; then \
 COPY ./xdebug.ini /etc/php/7.0/cli/conf.d/xdebug.ini
 
 #####################################
+# supervisor;
+#####################################
+
+ARG INSTALL_SUPERVISOR=false
+ENV INSTALL_SUPERVISOR ${INSTALL_SUPERVISOR}
+RUN if [ ${INSTALL_SUPERVISOR} = true ]; then \
+    apt-get update && \
+    apt-get install -y supervisor \
+;fi
+COPY ./supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+RUN if [ ${INSTALL_SUPERVISOR} = false ]; then \
+    rm /etc/supervisor/conf.d/supervisord.conf \
+;fi
+
+#####################################
 # ssh:
 #####################################
 ARG INSTALL_WORKSPACE_SSH=false
