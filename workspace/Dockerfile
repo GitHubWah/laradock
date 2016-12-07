@@ -82,10 +82,10 @@ USER root
 COPY ./crontab /var/spool/cron/crontabs
 
 #####################################
-# Change apt source:
+# Change apt sources:
 #####################################
-RUN mv /etc/apt/source.list /etc/apt/source.list.bak
-COPY ./aliyun_source.list /etc/apt/source.list
+RUN mv /etc/apt/sources.list /etc/apt/sources.list.bak
+COPY ./aliyun_sources.list /etc/apt/sources.list
 
 #####################################
 # xDebug:
