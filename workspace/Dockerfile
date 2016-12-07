@@ -71,6 +71,7 @@ ARG COMPOSER_GLOBAL_INSTALL=false
 ENV COMPOSER_GLOBAL_INSTALL ${COMPOSER_GLOBAL_INSTALL}
 RUN if [ ${COMPOSER_GLOBAL_INSTALL} = true ]; then \
     # run the install
+    composer config -g repo.packagist composer https://packagist.phpcomposer.com && \
     composer global install \
 ;fi
 
