@@ -276,6 +276,7 @@ RUN echo "" >> ~/.bashrc && \
 # Mariadb and MongoDB clients
 #####################################
 
+USER root
 RUN apt-get install -y mariadb-client mongodb-clients
 
 #
