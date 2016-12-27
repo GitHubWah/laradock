@@ -272,6 +272,12 @@ USER laradock
 RUN echo "" >> ~/.bashrc && \
     echo 'export PATH="/var/www/vendor/bin:$PATH"' >> ~/.bashrc
 
+#####################################
+# Mariadb and MongoDB clients
+#####################################
+
+RUN apt-get install -y mariadb-client mongodb-clients
+
 #
 #--------------------------------------------------------------------------
 # Final Touch
