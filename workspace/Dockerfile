@@ -80,7 +80,7 @@ RUN if [ ${COMPOSER_GLOBAL_INSTALL} = true ]; then \
 #####################################
 USER root
 
-COPY ./crontab /var/spool/cron/crontabs
+COPY ./crontab /etc/cron.d
 
 #####################################
 # Change apt sources:
